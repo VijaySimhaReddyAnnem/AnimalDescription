@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="animal"
+            type="com.example.animaldemo.model.Animal" />
+        <variable
+            name="listener"
+            type="com.example.animaldemo.view.AnimalClickListener" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    android:id="@+id/animalLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:onClick="@{listener::onClick}"
+    android:tag="@{animal.name}"
+    >
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:imageUrl="@{animal.imageUrl}"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_info_details" />
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{animal.name}"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

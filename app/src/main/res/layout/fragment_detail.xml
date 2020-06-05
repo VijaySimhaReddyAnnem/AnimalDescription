@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="animal"
+            type="com.example.animaldemo.model.Animal" />
+        <variable
+            name="paletecolor"
+            type="com.example.animaldemo.model.PaleteColor" />
+    </data>
+
+
+<LinearLayout
+
+    android:id="@+id/detail_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.DetailFragment"
+    android:background="@{paletecolor.color}"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    >
+
+
+    <ImageView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="center"
+        android:imageUrl="@{animal.imageUrl}"
+        android:minHeight="200dp"
+         />
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:text="@{animal.name}" />
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{animal.location}" />
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{animal.lifeSpan}" />
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{animal.diet}" />
+
+</LinearLayout>
+</layout>
